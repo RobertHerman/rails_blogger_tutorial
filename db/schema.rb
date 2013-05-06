@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503175222) do
+ActiveRecord::Schema.define(:version => 20130506173427) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(:version => 20130503175222) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "author_id"
   end
+
+  add_index "articles", ["author_id"], :name => "index_articles_on_author_id"
 
   create_table "authors", :force => true do |t|
     t.string   "username",         :null => false
