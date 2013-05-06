@@ -21,6 +21,10 @@ class ArticlesController < ApplicationController
   
   def edit
     @article = Article.find(params[:id])
+    unless current_user.id == @article.author_id
+      flash.notice = "You are not the author of this article!"
+      redirect_to article_path(@article)
+    end
   end
 
   def update
