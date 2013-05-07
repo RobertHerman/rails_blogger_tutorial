@@ -1,12 +1,20 @@
 class Article < ActiveRecord::Base
   
-  attr_accessible :title, :body, :tag_list, :image
+  attr_accessible :title, :body, :tag_list, :image, :view_count
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
   belongs_to :author
   has_attached_file :image
-  
+ 
+  def initialize
+    @view_count = 0
+  end
+
+  def add_to_view_count
+    self.view_count += 1
+  end
+
   def tag_list
     tags.join(", ")
   end
