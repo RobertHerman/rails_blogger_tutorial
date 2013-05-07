@@ -7,6 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <nav>
+          <ul class="nav pull-right">
+           <li><%= link_to "Articles", articles_path %></li>
+           <li><%= link_to "Authors", authors_path %></li>
+           <li><%= link_to "Tags", tags_path %></li>
+          </ul>
+        </nav>
+       </div>
+     </div>
+  </header>
   <p class="flash"><%= flash.notice %></p>
   <div id="container">
     <div id="content">
@@ -21,9 +34,6 @@
       <% end %>
       </h6>
     </div>
-  </div>
-  <div id="sidebar">
-    <p class="sidebar">Sidebar</p>
   </div>
 </body>
 </html>
