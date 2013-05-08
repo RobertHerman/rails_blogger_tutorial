@@ -11,6 +11,11 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @articles }
+    end
   end
   
   def show
