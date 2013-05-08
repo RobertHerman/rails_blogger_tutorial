@@ -16,15 +16,25 @@
     </div>
     <div class="row-fluid">
       <div class="span2">
-        <ul class="nav pull-left">
-          <li><%= link_to "Articles", articles_path %></li>
-          <li><%= link_to "Authors", authors_path %></li>
-          <li><%= link_to "Tags", tags_path %></li>
-          <li>Most Popular Articles</li>
-          <% top3 = Article.all(:order => "view_count DESC", :limit => 3) %>
+        <ul class="nav nav-list">
+          <li class="nav-header">Most Popular Articles</li>
+          <% top3 = Article.order("view_count DESC").limit(3) %>
           <% top3.each do |a| %>
             <li><%= link_to a.title, article_path(a) %></li>
           <% end %>
+        </ul>
+        <ul class="nav nav-list">
+          <li class="nav-header">Articles By Date</li>
+          <li>May</li>
+          <li>June</li>
+          <li>July</li>
+          <ul class="nav nav-list">
+            <li>1</li>
+            <li>2</li>
+            <li>5</li>
+            <li>16</li>
+          </ul>
+          <li>August</li>
         </ul>
       </div>
       <div class="span10">
