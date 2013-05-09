@@ -16,4 +16,9 @@ class Article < ActiveRecord::Base
     self.tags = new_or_found_tags
   end
 
+  def add_to_view_count
+    self.view_count += 1 unless self.view_count.nil?
+    self.view_count = 1 if self.view_count.nil?
+    self.save
+  end
 end
