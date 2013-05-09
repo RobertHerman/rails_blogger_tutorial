@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml { render :xml => @articles }
+      format.rss { render :rss => @articles }
     end
   end
   
