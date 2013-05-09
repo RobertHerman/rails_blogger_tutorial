@@ -21,4 +21,8 @@ class Article < ActiveRecord::Base
     self.view_count = 1 if self.view_count.nil?
     self.save
   end
+
+  def creation_date
+    self.created_at
+  end
 end
