@@ -25,4 +25,10 @@ class Article < ActiveRecord::Base
   def creation_date
     self.created_at
   end
+
+  def self.by_month_and_year(month, year)
+    where("strftime('%m', created_at) = ? AND strftime('%Y', created_at) = ?"\
+          , month.rjust(2,'0')\
+          , year.rjust(2,'0'))
+  end
 end

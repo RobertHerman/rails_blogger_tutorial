@@ -58,4 +58,15 @@ class ArticlesController < ApplicationController
     flash.notice = "Article '#{ @article.title }' Deleted!"
     redirect_to articles_path
   end
+
+  def index_by_month_year
+    year = params[:year]
+    month = params[:month]
+    year = Time.now.year.to_s if year.nil?
+    month = Time.now.month.to_s if month.nil?
+
+    @date = Time.new(year,month).strftime("%B %Y")
+    @articles = Article.by_month_and_year(month,year)
+  end
+
 end

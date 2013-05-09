@@ -24,17 +24,19 @@
           <% end %>
         </ul>
         <ul class="nav nav-list">
-          <li class="nav-header">Articles By Date</li>
-          <li>May</li>
-          <li>June</li>
-          <li>July</li>
-          <ul class="nav nav-list">
-            <li>1</li>
-            <li>2</li>
-            <li>5</li>
-            <li>16</li>
-          </ul>
-          <li>August</li>
+          <li class="nav-header">Articles By Month</li>
+          <li><%= link_to "January", month_articles_path(1) %></li>
+          <li><%= link_to "Feburary", month_articles_path(2) %></li>
+          <li><%= link_to "March", month_articles_path(3) %></li>
+          <li><%= link_to "April", month_articles_path(4) %></li>
+          <li><%= link_to "May", month_articles_path(5) %></li>
+          <li><%= link_to "June", month_articles_path(6) %></li>
+          <li><%= link_to "July", month_articles_path(7) %></li>
+          <li><%= link_to "August", month_articles_path(8) %></li>
+          <li><%= link_to "September", month_articles_path(9) %></li>
+          <li><%= link_to "October", month_articles_path(10) %></li>
+          <li><%= link_to "November", month_articles_path(11) %></li>
+          <li><%= link_to "December", month_articles_path(12) %></li>
         </ul>
       </div>
       <div class="span10">
