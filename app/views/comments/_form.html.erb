@@ -2,11 +2,11 @@
 <%= form_for [ @article, @comment ] do |f| %>
   <p>
     <%= f.label :author_name, "Your Name" %><br/>
-    <%= f.text_field :author_name %>
+    <%= f.text_field :author_name, :class => "span4" %>
   </p>
   <p>
     <%= f.label :body %><br/>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :rows => "3", :class => "span10" %>
   </p>
   <p>
     <%= f.submit 'Submit' %>
