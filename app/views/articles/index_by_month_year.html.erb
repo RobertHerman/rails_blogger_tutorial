@@ -1,11 +1,9 @@
 <h2>Articles In <%= @date %> </h2>
+
 <ul id="articles">
-  <% @articles.each do |article| %>
-    <li>
-    <%= link_to article.title, article_path(article), id: "article_#{article.id}" %>
-    </li>
-  <% end %>
+  <%= render @articles %>
 </ul>
+
 <% if logged_in? %>
   <%= link_to "Create a New Article", new_article_path, class: "btn new_article" %>
 <% end %>
