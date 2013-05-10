@@ -15,8 +15,8 @@
 <%= render partial: 'comments/form' %>
 
 <% if logged_in? and current_user.id == @article.author_id %>
-  <%= link_to "Delete", article_path(@article), method: :delete, confirm: "Delete?" %>
-  <%= link_to "Edit", edit_article_path(@article) %>
+  <%= link_to "Delete", article_path(@article), class: "btn", method: :delete, confirm: "Delete?" %>
+  <%= link_to "Edit", edit_article_path(@article), class: "btn" %>
 <% end %>
 
-<%= link_to "Back to the Articles List", articles_path %>
+<%= link_to "Back to the Articles List", articles_path, class: "btn" %>
