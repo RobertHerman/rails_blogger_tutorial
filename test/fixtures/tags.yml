@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+tag_one:
+  name: Tag One
 
-two:
-  name: MyString
+tag_two:
+  name: Tag Two
+
+tag_three:
+  name: Tag Three
+
+tag_four:
+  name: Tag Four

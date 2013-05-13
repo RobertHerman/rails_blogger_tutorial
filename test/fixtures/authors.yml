@@ -4,23 +4,19 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one:
- id: 1
+author_one:
  username: winware@yahoo.com
  crypted_password: password
 
-two:
- id: 2
+author_two:
  username: jim@yahoo.com
  crypted_password: password
 
-three:
- id: 3
+author_three:
  username: steve@yahoo.com
  crypted_password: password
 
-four:
- id: 4
+author_four:
  username: tim@yahoo.com
  crypted_password: password
 

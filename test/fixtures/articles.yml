@@ -4,8 +4,22 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+
+article_one:
+ title: Article One About Apples
+ body: An apple a day
+ view_count: 5
+ author: author_one
+
+article_two:
+ title: Article Two About Bananas
+ body: An banana a day
+ view_count: 3
+ author: author_two
+
+article_three:
+ title: Article Three About Cantelopes
+ body: An cantelope a day
+ view_count: 3
+ author: author_two
+
