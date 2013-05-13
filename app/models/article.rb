@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
   has_many :tags, through: :taggings
   belongs_to :author
   has_attached_file :image
+  validates :title, :presence => true
+  validates :body, :presence => true
  
   def tag_list
     tags.join(", ")
