@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AuthorsControllerTest < ActionController::TestCase
   setup do
-    @author = authors(:one)
+    @author = authors(:author_one)
   end
 
   test "should get index" do
