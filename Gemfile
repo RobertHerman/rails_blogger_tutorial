@@ -4,14 +4,13 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 
 
-group :development do
-  gem 'cucumber-rails'
-  gem 'rspec-rails'
-end
+gem "rspec-rails", :group => [:test, :development]
+#gem "cucumber-rails", :group => [:test, :development]
 
 group :test do
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+  #gem 'factory_girl_rails'
 end
 
 # Gems used only for assets and not required
