@@ -8,18 +8,41 @@
 article_one:
  title: Article One About Apples
  body: An apple a day
+ published: true
  view_count: 5
  author: author_one
 
 article_two:
  title: Article Two About Bananas
  body: An banana a day
+ published: true
  view_count: 3
  author: author_two
 
 article_three:
  title: Article Three About Cantelopes
  body: An cantelope a day
+ published: true
  view_count: 3
  author: author_two
 
+article_four:
+ title: Article Four About Dingleberries
+ body: An dingleberry a day
+ published: false
+ view_count: 5
+ author: author_three
+
+article_five:
+ title: Article Five About Eggplants
+ body: An eggplant a day
+ published: false
+ view_count: 3
+ author: author_three
+
+article_six:
+ title: Article Six About Figs
+ body: An fig a day
+ published: false
+ view_count: 3
+ author: author_three

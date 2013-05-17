@@ -33,4 +33,8 @@ class Article < ActiveRecord::Base
           , month.rjust(2,'0')\
           , year.rjust(2,'0'))
   end
+
+  def self.published
+    where :published => true
+  end
 end

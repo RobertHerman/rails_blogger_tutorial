@@ -10,11 +10,12 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.published
 
     respond_to do |format|
       format.html
       format.rss { render :rss => @articles }
+      format.json { render :json => @articles }
     end
   end
   
@@ -47,6 +48,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     @article.author_id = current_user.id
+    @article.published = true
     @article.save
     flash.notice = "Article '#{ @article.title }' Created!"
     redirect_to article_path(@article)
