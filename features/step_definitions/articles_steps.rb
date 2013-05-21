@@ -15,7 +15,6 @@ end
 
 Then /^I should only receive published articles as JSON$/ do
   articles_json = JSON last_response.body
-#  articles_json.should have(6).published_articles
   articles_json.should have(3).published_articles
 
   published_articles = Article.all.select {|article| article.published?}
