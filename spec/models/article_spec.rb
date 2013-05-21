@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Article do
   describe '.published' do
-    before do
+    before(:each) do
       FactoryGirl.create_list(:published_article, 2)
       FactoryGirl.create_list(:unpublished_article, 1)
 
