@@ -17,6 +17,7 @@ end
 # in production environments by default.
 group :assets do
   gem 'bootstrap-sass'
+  gem 'haml'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
