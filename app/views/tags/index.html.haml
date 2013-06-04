@@ -1,0 +1,50 @@
+-#
+-# the normal HAML way of adding attributes ie. standard Ruby hash
+  %h2{:class => "foo", :id => "bar"} All Tags
+  or
+  %h2{class: "foo", id: "bar"} All Tags
+
+
+-# the shortcut HAML way because class and id are such common attributes
+%h2.foo#bar All Tags
+
+-#
+-# Because the <div> tag is so common it is the DEFAULT tag definition and can be left undefined
+-# so .content Hello World!  becomes <div class='content'>Hello World!</div>
+-# the .content defaults to %div.content
+.content Here are the tags in use
+
+-# some HAML::Helper examples escaped with HTML comment passthrough
+/ .content= find_and_preserve "Foo\n<pre>Bar\nBaz&<bob></pre>"
+/ .content= html_escape "Foo\n<pre>Bar\nBaz&<bob></pre>"
+
+-# unescape HTML with !=
+  .content!= "I feel <strong>!"
+-# escape HTML with &=
+  .content&= "I feel <strong>!"
+
+%ul#tags
+  - @tags.each do |tag|
+    -# really cool active record object style with []
+    %li[tag]= link_to tag.name, tag_path(tag)
+
+    -# traditional ruby hash rocket style within {}
+      %li{ :id => ['tag', tag.id],
+      :class => ['foo', tag.name],
+      }= link_to tag.name, tag_path(tag)
+
+    -# newer ruby hash style within {}
+      %li{ id: ['tag', tag.id] }= link_to tag.name, tag_path(tag)
+
+    -# non-rubyish style with ruby #{} substituion within ()
+      %li(id="tag_#{tag.id}")= link_to tag.name, tag_path(tag)
+
+-# This is the original erb code
+  %li#tag= link_to tag.name, tag_path(tag)
+  <ul id="tags">
+    <% @tags.each do |tag| %>
+      <li>
+      <%= link_to tag.name, tag_path(tag) %>
+      </li>
+    <% end %>
+  </ul>
